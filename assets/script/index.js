@@ -62,6 +62,15 @@ function createShape(shape, colour) {
   return newShape;
 }
 
+function info(self) {
+  let number = self.getAttribute('data-number');
+  let colorShape = self.getAttribute('name');
+  output.innerText = `Item ${number}: ${colorShape}`;
+  setTimeout(function() {
+    output.innerText = '';
+  }, 3_000)
+}
+
 function details(obj) {
   if (arr.length < 24) {
     let thisShape = create('div');
@@ -88,6 +97,9 @@ function details(obj) {
         thisShape.style.backgroundColor = `var(--app-purple)`
         break;
     }
+    thisShape.setAttribute('name', obj.getInfo())
+    thisShape.setAttribute('data-number', `${arr.length + 1}`)
+    thisShape.setAttribute('onclick', 'info(this)')
     body.appendChild(thisShape)
     arr.push(thisShape)
   } else {
