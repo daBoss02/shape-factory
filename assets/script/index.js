@@ -19,3 +19,7 @@ function selectAll(selector, parent = document) {
   return parent.querySelectorAll(selector);
 }
 
+
+const create = select('.create');
+const color = select('.color');
+const shape = select('.shape')
