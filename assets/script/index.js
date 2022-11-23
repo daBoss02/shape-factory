@@ -66,9 +66,6 @@ function info(self) {
   let number = self.getAttribute('data-number');
   let colorShape = self.getAttribute('name');
   output.innerText = `Item ${number}: ${colorShape}`;
-  setTimeout(function() {
-    output.innerText = '';
-  }, 3_000)
 }
 
 function details(obj) {
